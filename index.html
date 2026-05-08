@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>¡Feliz Cumpleaños! 🎂</title>
+    
+    <!-- Fuentes Externas -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Iconos (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Overlay de Inicio -->
+    <div id="start-overlay">
+        <h2>¡Tengo una sorpresa! 🎁</h2>
+        <p>Toca el botón para iniciar la experiencia</p>
+        <button class="big-play-btn" id="start-btn" aria-label="Iniciar música y animaciones">
+            <i class="fas fa-play"></i>
+        </button>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">Happy Birthday! 🎉</div>
+        <button class="menu-toggle" id="menu-btn" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="#gallery" class="nav-link">Recuerdos</a>
+            <a href="#music" class="nav-link">Música</a>
+            <a href="#letter" class="nav-link">Carta</a>
+        </div>
+    </nav>
+
+    <!-- Contenedor de Confeti -->
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <!-- Header Principal -->
+    <header>
+        <div class="cake-container">🎂</div>
+        <h1>¡Feliz Cumpleaños!</h1>
+        <p class="subtitle">A la persona más especial del mundo. <br> Hoy celebramos <span class="highlight">TI</span>.</p>
+    </header>
+
+    <main>
+        <!-- Sección Fotos -->
+        <section id="gallery">
+            <h2 class="section-title">Momentos Felices</h2>
+            <div class="gallery-grid">
+                <div class="photo-card" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczO4IU9CZuuKPS_jXQUPQFjD13b2-ToLEMdkzV_lmdRYgFvvwrhHucOrczS4XSrpkAMGtcv7gOaC5T2C7Et_N7zrU3QpqLQMVflKY79qRgeOL6Qz5RpkTvR29S-XYf-SvZgAwSXTS1P-IuYdzPBqYKE6fQ=w704-h708-s-no-gm?authuser=0" alt="Foto 1">
+                    <div class="photo-caption">Por la mejor compañera</div>
+                </div>
+                <div class="photo-card" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMtMA2ECaEi2LE1-grOUd0VUnZ11L2VDMlWdf4Vr8YCCs0a4jfCrDr0pVM24JMYcjdk7_D5zqM3RIxCB-lRvFZ_UPC-dMrqDKCc7YTSs705-B1_XE4IOcyf28iBzDk_dFGATAAsTY_JiEIF3XhOcDzKkA=w683-h911-s-no-gm?authuser=0" alt="Foto 2">
+                    <div class="photo-caption">Una chica inolvidable</div>
+                </div>
+                <div class="photo-card" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPmIosyWIsa30Pj7Nh9yBT4xaRxruzDDk9fR6CU3weryMEpcFLLGx5yJoCxAjgbdmMss0daqEXQrIgXQTnZzmKqQVcp8H0Y6ce05V78z9MgpNR5XCxmJIMaa92LlihB8EnSUFPxYKT5jJc6o_VCb-Kmtg=w410-h911-s-no-gm?authuser=0" alt="Foto 3">
+                    <div class="photo-caption">La sonrisa mas hermosa</div>
+                </div>
+                <div class="photo-card" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPogKNN8ij6wBgY0m8CzmUqz4Md6tBdn77gR2-HSNHzLM-xiCW8rLjltFIAb4UKDREBE-qxGatImY3TCK7wJa9cNHwUN6QNvShqtwJiS8PlH36DRDeAIaBGT48E2wYIRl5rRaOPWoElHNZsEcNZtZghsg=w384-h512-s-no-gm?authuser=0" alt="Foto 4">
+                    <div class="photo-caption">Celebrando juntos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Música -->
+        <section id="music">
+            <h2 class="section-title">¡A Bailar! 🎶</h2>
+            
+            <div class="music-player">
+                <div class="youtube-wrapper">
+                    <!-- El div 'player' será reemplazado por la API de YouTube -->
+                    <div id="player"></div>
+                </div>
+
+                <div class="song-info">
+                    <h3 id="song-title">Cargando...</h3>
+                    <p id="song-artist">...</p>
+                </div>
+
+                <div class="controls">
+                    <button class="btn-control" id="prev" aria-label="Anterior"><i class="fas fa-backward"></i></button>
+                    <button class="btn-play" id="play" aria-label="Reproducir/Pausar"><i class="fas fa-play"></i></button>
+                    <button class="btn-control" id="next" aria-label="Siguiente"><i class="fas fa-forward"></i></button>
+                </div>
+
+                <div class="playlist" id="playlist">
+                    <!-- Items generados por JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Carta -->
+        <section id="letter">
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); text-align: center; border: 2px dashed var(--primary-color);">
+                <h2 style="font-family: 'Dancing Script'; color: var(--primary-color); font-size: 2rem; margin-bottom: 15px;">Mi deseo para ti</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 10px;">En este día tan especial, quiero desearte todo la felicidad del mundo.</p>
+                <p>Que este nuevo año traiga sonrisas, éxitos y muchísimo amor.</p>
+                <p style="margin-top: 20px; font-weight: bold; color: var(--secondary-color);">¡Te quiero mucho! 🎁</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Disfruta tu día <i class="fas fa-birthday-cake"></i></p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-lightbox" id="close-lightbox" aria-label="Cerrar imagen">&times;</button>
+        <img id="lightbox-img" src="" alt="Ampliada">
+        <p id="lightbox-caption" style="color: white; margin-top: 15px; font-size: 1.2rem;"></p>
+    </div>
+
+    <!-- Enlace al archivo JS -->
+    <script src="script.js"></script>
+</body>
+</html>
