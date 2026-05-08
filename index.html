@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>¡Feliz Cumpleaños! 🎂</title>
     
-    <!-- Fuentes Externas -->
+    <!-- Fuentes e Iconos -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Iconos (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Enlace al archivo CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,7 +18,7 @@
     <div id="start-overlay">
         <h2>¡Tengo una sorpresa! 🎁</h2>
         <p>Toca el botón para iniciar la experiencia</p>
-        <button class="big-play-btn" id="start-btn" aria-label="Iniciar música y animaciones">
+        <button class="big-play-btn" id="start-btn">
             <i class="fas fa-play"></i>
         </button>
     </div>
@@ -28,9 +26,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-brand">Happy Birthday! 🎉</div>
-        <button class="menu-toggle" id="menu-btn" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
         <div class="nav-links" id="navLinks">
             <a href="#gallery" class="nav-link">Recuerdos</a>
             <a href="#music" class="nav-link">Música</a>
@@ -38,10 +34,10 @@
         </div>
     </nav>
 
-    <!-- Contenedor de Confeti -->
+    <!-- Confeti -->
     <div class="confetti-container" id="confetti-container"></div>
 
-    <!-- Header Principal -->
+    <!-- Header -->
     <header>
         <div class="cake-container">🎂</div>
         <h1>¡Feliz Cumpleaños!</h1>
@@ -49,7 +45,7 @@
     </header>
 
     <main>
-        <!-- Sección Fotos -->
+        <!-- Galería -->
         <section id="gallery">
             <h2 class="section-title">Momentos Felices</h2>
             <div class="gallery-grid">
@@ -72,34 +68,47 @@
             </div>
         </section>
 
-        <!-- Sección Música -->
+        <!-- Música -->
         <section id="music">
             <h2 class="section-title">¡A Bailar! 🎶</h2>
             
-            <div class="music-player">
-                <div class="youtube-wrapper">
-                    <!-- El div 'player' será reemplazado por la API de YouTube -->
-                    <div id="player"></div>
-                </div>
+            <!-- Contenedor de Botones de Música -->
+            <div class="music-links-container">
+                
+                <!-- Canción 1 -->
+                <a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank" class="music-link-btn">
+                    <div class="btn-icon"><i class="fab fa-youtube"></i></div>
+                    <div class="btn-info">
+                        <h3>Happy</h3>
+                        <p>Pharrell Williams</p>
+                    </div>
+                    <div class="btn-action"><i class="fas fa-external-link-alt"></i></div>
+                </a>
 
-                <div class="song-info">
-                    <h3 id="song-title">Cargando...</h3>
-                    <p id="song-artist">...</p>
-                </div>
+                <!-- Canción 2 (NUEVA ESCUELA) -->
+                <a href="https://youtu.be/ZQXeJ-imzUk?si=RxYI0zxsuUfetKmW" target="_blank" class="music-link-btn">
+                    <div class="btn-icon"><i class="fab fa-youtube"></i></div>
+                    <div class="btn-info">
+                        <h3>Nueva Escuela</h3>
+                        <p>RUMBA</p>
+                    </div>
+                    <div class="btn-action"><i class="fas fa-external-link-alt"></i></div>
+                </a>
 
-                <div class="controls">
-                    <button class="btn-control" id="prev" aria-label="Anterior"><i class="fas fa-backward"></i></button>
-                    <button class="btn-play" id="play" aria-label="Reproducir/Pausar"><i class="fas fa-play"></i></button>
-                    <button class="btn-control" id="next" aria-label="Siguiente"><i class="fas fa-forward"></i></button>
-                </div>
-
-                <div class="playlist" id="playlist">
-                    <!-- Items generados por JS -->
-                </div>
+                <!-- Canción 3 (SECRETO CUMPLEAÑOS) -->
+                <a href="https://www.youtube.com/watch?v=8Ejy8NTEJqw&list=RD8Ejy8NTEJqw&start_radio=1" target="_blank" class="music-link-btn">
+                    <div class="btn-icon"><i class="fab fa-youtube"></i></div>
+                    <div class="btn-info">
+                        <h3>Secreto Cumpleaños</h3>
+                        <p>RUMBA</p>
+                    </div>
+                    <div class="btn-action"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                
             </div>
         </section>
 
-        <!-- Sección Carta -->
+        <!-- Carta -->
         <section id="letter">
             <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); text-align: center; border: 2px dashed var(--primary-color);">
                 <h2 style="font-family: 'Dancing Script'; color: var(--primary-color); font-size: 2rem; margin-bottom: 15px;">Mi deseo para ti</h2>
@@ -114,14 +123,14 @@
         <p>Disfruta tu día <i class="fas fa-birthday-cake"></i></p>
     </footer>
 
-    <!-- Lightbox Modal -->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <button class="close-lightbox" id="close-lightbox" aria-label="Cerrar imagen">&times;</button>
-        <img id="lightbox-img" src="" alt="Ampliada">
-        <p id="lightbox-caption" style="color: white; margin-top: 15px; font-size: 1.2rem;"></p>
+        <button class="close-lightbox" id="close-lightbox">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-caption"></p>
     </div>
 
-    <!-- Enlace al archivo JS -->
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 </html>
